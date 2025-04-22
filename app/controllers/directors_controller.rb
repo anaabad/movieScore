@@ -1,6 +1,7 @@
 class DirectorsController < ApplicationController
   def index
     @directors = Director.all
+    authorize! :index, @directors
     render json: @directors
   end
 
